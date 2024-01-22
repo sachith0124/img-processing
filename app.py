@@ -6,8 +6,13 @@ import requests
 st.set_page_config(layout='wide')
 
 st.title('Image 2 ASCII')
-st.subheader('''
-    :rainbow[An app that turns any Image to ASCII styled Image or Text.]''')
+
+cols = st.columns([0.8, 0.2], gap='large')
+with cols[0]:
+    st.subheader('''
+        :rainbow[An app that turns any Image to ASCII styled Image or Text.]''')
+with cols[1]:
+    st.link_button('Go to Dev\'s Website ↗️', url='https://sachith.streamlit.app/')
 
 with st.form('image_upload'):
     c1, c2 = st.columns([0.7, 0.3], gap='large')
