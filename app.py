@@ -16,6 +16,15 @@ with cols[1]:
 
 with st.form('image_upload'):
     c1, c2 = st.columns([0.8, 0.2], gap='small')
+    css='''
+            <style>
+                [data-testid="stExpander"] {
+                    overflow: scroll;
+                    max-height: 450px;
+                }
+            </style>
+            '''
+    st.markdown(css, unsafe_allow_html=True)
     with c1:
         image_file = st.file_uploader('Upload Image')
         st.markdown('<div style="text-align: center"> OR </div>', unsafe_allow_html=True)
@@ -25,15 +34,7 @@ with st.form('image_upload'):
             st.caption('Images may be subject to copyright. I do not own these images. \n Images are being dynamically loaded from an external source.')
             st.write("Click on image and click on 'Process Image' button!")
             image_file_url = click_detector(util.load_imgs_html())
-            css='''
-            <style>
-                [data-testid="stExpander"] {
-                    overflow: scroll;
-                    height: 450px;
-                }
-            </style>
-            '''
-            st.markdown(css, unsafe_allow_html=True)
+            
     with c2:
         options = list(img2ascii.AVAILABLE_IMAGE_MODES.keys()) + list(img2ascii.AVAILABLE_TEXT_MODES.keys())
         selected_mode = st.radio('Select Mode', options=options)

@@ -3,6 +3,7 @@ from PIL import Image
 
 SAMPLE_IMAGE_URLS = [
     "https://wallpapers-clan.com/wp-content/uploads/2023/11/marvel-iron-man-in-destroyed-suit-desktop-wallpaper-preview.jpg", 
+    "https://i.ytimg.com/vi/yGNjoKGMF4Y/maxresdefault.jpg", 
     "https://images.hdqwalls.com/wallpapers/iron-man-abstract-4k-b6.jpg"
 ]
 
